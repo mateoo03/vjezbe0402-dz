@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validacija registarske oznake BiH vozila</title>
+</head>
+<body>
+  <form id="licensePlateForm">
+    <label for="licensePlateInput">Unesite registarsku oznaku (npr. ABC 123):</label>
+    <input type="text" id="licensePlateInput">
+    <button type="button" onclick="validateLicensePlate()">Validacija</button>
+  </form>
+
+  <script>
+    function validateLicensePlate() {
+      const licensePlate = document.getElementById('licensePlateInput').value.trim().toUpperCase();
+      const regex = /^[A-ZČĆŠĐŽ]{2}\s\d{3}\s[A-ZČĆŠĐŽ]{1,2}\d{1,4}$/; // Primjer BiH registarske oznake: ABC 123
+
+      const isValid = regex.test(licensePlate);
+
+      if (isValid) {
+        alert('Ispravna registarska oznaka.');
+        return true;
+      } else {
+        alert('Neispravan format registarske oznake.');
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>

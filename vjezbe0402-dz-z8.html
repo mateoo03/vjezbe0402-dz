@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online kalkulator</title>
+</head>
+<body>
+
+  <script>
+    function showResult(operation) {
+      let result;
+      const number1 = 10; // Zamijenite ovim vrijednostima koje korisnik unese
+      const number2 = 5;  // Zamijenite ovim vrijednostima koje korisnik unese
+
+      switch (operation) {
+        case 'zbrajanje':
+          result = number1 + number2;
+          break;
+        case 'oduzimanje':
+          result = number1 - number2;
+          break;
+        case 'mnozenje':
+          result = number1 * number2;
+          break;
+        case 'dijeljenje':
+          result = number1 / number2;
+          break;
+        case 'sinus':
+          result = Math.sin(number1);
+          break;
+        case 'kosinus':
+          result = Math.cos(number1);
+          break;
+        case 'tanges':
+          result = Math.tan(number1);
+          break;
+        case 'logaritam':
+          result = Math.log(number1);
+          break;
+        case 'logaritamBaza10':
+          result = Math.log10(number1);
+          break;
+        case 'kvadriranje':
+          result = Math.pow(number1, 2);
+          break;
+        case 'kubiranje':
+          result = Math.pow(number1, 3);
+          break;
+        case 'potenciranje':
+          result = Math.pow(number1, number2);
+          break;
+        default:
+          result = 'Nepoznata operacija';
+      }
+
+      alert(`Rezultat operacije ${operation} je: ${result}`);
+    }
+  </script>
+
+  <button onclick="showResult('zbrajanje')">Zbroj</button>
+  <button onclick="showResult('oduzimanje')">Oduzimanje</button>
+  <button onclick="showResult('mnozenje')">Množenje</button>
+  <button onclick="showResult('dijeljenje')">Dijeljenje</button>
+  <button onclick="showResult('sinus')">Sinus</button>
+  <button onclick="showResult('kosinus')">Kosinus</button>
+  <button onclick="showResult('tanges')">Tanges</button>
+  <button onclick="showResult('logaritam')">Logaritam</button>
+  <button onclick="showResult('logaritamBaza10')">Logaritam po bazi 10</button>
+  <button onclick="showResult('kvadriranje')">Kvadriranje</button>
+  <button onclick="showResult('kubiranje')">Kubiranje</button>
+  <button onclick="showResult('potenciranje')">Potenciranje</button>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promijeni pozadinu</title>
+</head>
+<body>
+  <button onclick="changeBackgroundColor()">Promijeni pozadinu</button>
+  <p>Trenutna boja: <span id="currentColor"></span></p>
+
+  <script>
+    function changeBackgroundColor() {
+      const randomColor = getRandomColor();
+      document.body.style.backgroundColor = randomColor;
+      document.getElementById('currentColor').textContent = randomColor;
+    }
+
+    function getRandomColor() {
+      // Generiranje nasumične boje između #000000 i #FFFFFF
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+  </script>
+</body>
+</html>

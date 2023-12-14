@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Provjera ocjene</title>
+</head>
+<body>
+  <form>
+    <label for="gradeInput">Unesite ocjenu (1-5):</label>
+    <input type="text" id="gradeInput">
+    <button type="button" onclick="checkGrade()">Provjeri ocjenu</button>
+  </form>
+
+  <script>
+    function checkGrade() {
+      const gradeInput = document.getElementById('gradeInput').value;
+      let message = '';
+
+      switch (parseInt(gradeInput)) {
+        case 1:
+          message = 'Nedovoljan';
+          break;
+        case 2:
+          message = 'Dovoljan';
+          break;
+        case 3:
+          message = 'Dobar';
+          break;
+        case 4:
+          message = 'Vrlo dobar';
+          break;
+        case 5:
+          message = 'Odličan';
+          break;
+        default:
+          message = 'Unesite ocjenu između 1 i 5';
+      }
+
+      alert(message);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Izračun dobi</title>
+</head>
+<body>
+  <form id="ageCalculator">
+    <label for="birthdate">Datum rođenja:</label>
+    <input type="date" id="birthdate">
+    <br><br>
+    <label for="birthyear">Godina rođenja:</label>
+    <input type="number" id="birthyear" min="1900" max="2023">
+    <br><br>
+    <button type="button" onclick="calculateAge()">Izračunaj</button>
+  </form>
+
+  <script>
+    function calculateAge() {
+      const birthdate = new Date(document.getElementById('birthdate').value);
+      const birthyear = document.getElementById('birthyear').value;
+      const currentYear = new Date().getFullYear();
+
+      const age = currentYear - birthdate.getFullYear();
+      const isBirthdayPassed = (new Date().setFullYear(birthdate.getFullYear()) > Date.now());
+
+      if (isBirthdayPassed) {
+        alert(`Imate ${age - 1} godina.`);
+      } else {
+        alert(`Imate ${age} godina.`);
+      }
+    }
+  </script>
+</body>
+</html>

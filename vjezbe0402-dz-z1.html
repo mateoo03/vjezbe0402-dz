@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Izračun sredina</title>
+</head>
+<body>
+  <h1>Izračun sredina</h1>
+  <p>Unesite skup brojeva odvojenih zarezom:</p>
+  <input type="text" id="numbersInput">
+  <button onclick="calculate()">Izračunaj</button>
+  
+  <p>Aritmetička sredina: <span id="arithmeticMean"></span></p>
+  <p>Geometrijska sredina: <span id="geometricMean"></span></p>
+
+  <script>
+    function calculate() {
+      const numbersInput = document.getElementById('numbersInput').value;
+      const numbersArray = numbersInput.split(',').map(Number);
+
+      const arithmeticMean = calculateArithmeticMean(numbersArray);
+      const geometricMean = calculateGeometricMean(numbersArray);
+
+      document.getElementById('arithmeticMean').textContent = arithmeticMean;
+      document.getElementById('geometricMean').textContent = geometricMean;
+    }
+
+    function calculateArithmeticMean(numbers) {
+      const sum = numbers.reduce((acc, num) => acc + num, 0);
+      return sum / numbers.length || 0;
+    }
+
+    function calculateGeometricMean(numbers) {
+      const product = numbers.reduce((acc, num) => acc * num, 1);
+      return Math.pow(product, 1 / numbers.length) || 0;
+    }
+  </script>
+</body>
+</html>

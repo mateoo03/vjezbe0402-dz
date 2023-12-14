@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zbrajanje brojeva</title>
+</head>
+<body>
+  <form id="additionForm">
+    <label for="number1">Prvi broj:</label>
+    <input type="number" id="number1">
+    <br><br>
+    <label for="number2">Drugi broj:</label>
+    <input type="number" id="number2">
+    <br><br>
+    <button type="button" onclick="performAddition()">Zbroji</button>
+    <br><br>
+    <label for="result">Rezultat zbrajanja:</label>
+    <input type="text" id="result" readonly>
+  </form>
+
+  <script>
+    function performAddition() {
+      const num1 = parseFloat(document.getElementById('number1').value);
+      const num2 = parseFloat(document.getElementById('number2').value);
+      const result = num1 + num2;
+
+      document.getElementById('result').value = result;
+    }
+  </script>
+</body>
+</html>

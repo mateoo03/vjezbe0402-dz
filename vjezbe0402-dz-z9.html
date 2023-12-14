@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prekidač za žarulju</title>
+</head>
+<body>
+
+<img id="bulbImage" src="ugasena_zarulja.jpg" alt="Žarulja ugašena" width="200" height="200">
+<label for="switch">Prekidač:</label>
+<input type="checkbox" id="switch" onchange="toggleBulb()">
+
+<script>
+  function toggleBulb() {
+    const bulbImage = document.getElementById('bulbImage');
+    const switchButton = document.getElementById('switch');
+
+    if (switchButton.checked) {
+      bulbImage.src = "upaljena_zarulja.jpg";
+    } else {
+      bulbImage.src = "ugasena_zarulja.jpg";
+    }
+  }
+</script>
+
+</body>
+</html>
